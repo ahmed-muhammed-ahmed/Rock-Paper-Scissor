@@ -1,0 +1,20 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+}
+
+h1 {
+    color: #fff;
+    font-weight: 900;
+    font-size: 56px;
+    text-align: center;
+    margin: 300px;
+
+}

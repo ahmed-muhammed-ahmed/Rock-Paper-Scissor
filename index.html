@@ -3,11 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,500;1,600&family=Poppins:wght@900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Rock Paper Scissor</title>
 </head>
 <body>
-    <h1>Rock Paper Scissor Game</h1>
+    <div class="container">
+        <div class="game-container">
+            <h1 class="heading">Rock Paper Scissor Game</h1>
+            <div class="game-section">
+                <div class="display-img">
+                    <img src="./images/paper.svg" alt="Paper">
+                    <img src="./images/rock.svg" alt="Rock">
+                </div>
+                <div class="declare-winner">Let's Play</div>
+                <div class="images">
+                    <div class="rock"><img src="./images/rock.svg" alt="Rock">
+                       <p class="text">Rock</p>
+                    </div>
+                    <div class="paper"><img src="./images/paper.svg" alt="Paper">
+                    <p class="text text-paper">Paper</p>
+                </div>
+                    <div class="scissor"><img src="./images/scissors.svg" alt="scissors">
+                    <p class="text">scissors</p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script src="script.js"></script>
 </body>
 </html>

@@ -58,7 +58,8 @@ body {
   font-weight: 700;
   font-style: italic;
   color: #da477b;
-  margin: 40px 0;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
 .images {
@@ -94,6 +95,19 @@ img {
   text-align: center;
   margin-top: 10px;
   color: #da477b;
+}
+
+.btn {
+  margin-bottom: 12px;
+  padding: 16px 20px;
+  background-color: #d6336c;
+  color: #555;
+  width: 200px;
+  align-self: center;
+}
+
+.btn-replay {
+  display: none;
 }
 
 button {

@@ -7,8 +7,6 @@ function getComputerChoice() {
 }
 
 let computerSelection = getComputerChoice();
-let playerSelection = "Paper";
-playerSelection = playerSelection.toLowerCase();
 
 // DOM PART
 const rock = document.querySelector(".rock");
@@ -23,13 +21,25 @@ const computerChoicePaper = document.getElementById("computer-paper");
 const computerChoiceScissor = document.getElementById("computer-scissor");
 const plyScore = document.querySelector(".player-score");
 const compScore = document.querySelector(".computer-score");
+const replayBtn = document.querySelector(".btn-replay");
 
-function playRound1() {
+function reset() {
+  replayBtn.classList.add("btn-replay");
+  result.textContent = "Let's play";
+  playerChoiceRock.style.display = "inline";
+  playerChoicePaper.style.display = "none";
+  playerChoiceScissor.style.display = "none";
+  computerChoiceRock.style.display = "inline";
+  computerChoicePaper.style.display = "none";
+  computerChoiceScissor.style.display = "none";
+}
+
+function playRound() {
   rock.addEventListener("click", function () {
     computerSelection = getComputerChoice();
     playerChoiceRock.style.display = "inline";
     computerChoiceRock.style.display = "none";
-    console.log("Computer selection:", computerSelection);
+    replayBtn.classList.remove("btn-replay");
     if (computerSelection === "Scissor") {
       computerChoiceScissor.style.display = "inline";
       result.textContent = "You win, rock beats scissor";
@@ -44,11 +54,11 @@ function playRound1() {
 
   paper.addEventListener("click", function () {
     computerSelection = getComputerChoice();
-    console.log("Computer selection:", computerSelection);
 
     playerChoiceRock.style.display = "none";
     computerChoiceRock.style.display = "none";
     playerChoicePaper.style.display = "inline";
+    replayBtn.classList.remove("btn-replay");
 
     if (computerSelection === "Rock") {
       result.textContent = "You win, paper beats rock";
@@ -67,7 +77,8 @@ function playRound1() {
     playerChoiceRock.style.display = "none";
     computerChoiceRock.style.display = "none";
     playerChoiceScissor.style.display = "inline";
-    console.log("Computer selection: ", computerSelection);
+    replayBtn.classList.remove("btn-replay");
+
     if (computerSelection === "Paper") {
       result.textContent = "You win scissor beats paper";
 
@@ -82,123 +93,8 @@ function playRound1() {
       computerChoiceScissor.style.display = "inline";
     }
   });
-}
-function game1() {
-  let playerScore1 = 0;
-  let computerScore1 = 0;
-  let maxScoreReached = false;
-  while (!maxScoreReached) {
-    computerSelection = getComputerChoice();
-    playRound1();
 
-    if (
-      result.textContent.includes("win") ||
-      result.textContent.includes("lost")
-    ) {
-      if (result.textContent.includes("win")) {
-        playerScore1 += 1;
-        plyScore.textContent = playerScore1;
-      } else {
-        computerScore1 += 1;
-        compScore.textContent = computerScore1;
-      }
-    }
-
-    if (playerScore1 === 5 || computerScore1 === 5) {
-      maxScoreReached = true;
-    }
-  }
-
-  if (playerScore1 > computerScore1) {
-    result.textContent = `You win 5-${computerScore1}`;
-  } else {
-    result.textContent = `You lost 5-${playerScore1}`;
-  }
+  replayBtn.addEventListener("click", reset);
 }
 
-game1();
-// DOM PART
-
-// Validate user input
-// const validChoices = ["rock", "paper", "scissor"];
-
-// let winner = "";
-
-// function playRound(playerSelection, computerSelection) {
-//   if (
-//     computerSelection.toLowerCase() === "rock" &&
-//     playerSelection.toLowerCase() === "scissor"
-//   ) {
-//     winner = `You lose! ${computerSelection} beats ${playerSelection}.`;
-//   } else if (
-//     computerSelection.toLowerCase() === "rock" &&
-//     playerSelection.toLowerCase() === "paper"
-//   ) {
-//     winner = `You win! ${playerSelection} beats ${computerSelection}.`;
-//   } else if (
-//     computerSelection.toLowerCase() === "scissor" &&
-//     playerSelection.toLowerCase() === "rock"
-//   ) {
-//     winner = `You win! ${playerSelection} beats ${computerSelection}`;
-//   } else if (
-//     computerSelection.toLowerCase() === "scissor" &&
-//     playerSelection.toLowerCase() === "paper"
-//   ) {
-//     winner = `You lose! ${computerSelection} beats ${playerSelection}`;
-//   } else if (
-//     computerSelection.toLowerCase() === "paper" &&
-//     playerSelection.toLowerCase() === "rock"
-//   ) {
-//     winner = `You lose! ${computerSelection} beats ${playerSelection}!`;
-//   } else if (
-//     computerSelection.toLowerCase() === "paper" &&
-//     playerSelection.toLowerCase() === "scissor"
-//   ) {
-//     winner = `You win! ${playerSelection} beats ${computerSelection}`;
-//   } else if (!validChoices.includes(playerSelection)) {
-//     alert("Invalid input. Choose Rock, Paper, or Scissor");
-//     playerSelection = prompt(
-//       "What is your choice? Rock, Paper, Scissor"
-//     ).toLowerCase();
-//   } else {
-//     winner = `It's ties.`;
-//   }
-
-//   return winner;
-// }
-
-// function game() {
-//   let playerScore = 0;
-//   let computerScore = 0;
-
-//   for (let i = 0; i < 5; i++) {
-//     computerSelection = getComputerChoice();
-//     playerSelection = prompt("What is your choice? Rock, Paper, Scissor");
-//     const score = playRound(playerSelection, computerSelection);
-//     console.log(score);
-
-//     if (score.includes("win") || score.includes("lose")) {
-//       if (score.includes("win")) {
-//         playerScore += 1;
-//       } else {
-//         computerScore += 1;
-//       }
-//     }
-//   }
-
-//   if (playerScore === computerScore) {
-//     console.log(
-//       `It's ties! (Player Score: ${playerScore} vs Computer Score ${computerScore})`
-//     );
-//   } else if (playerScore > computerScore) {
-//     console.log(
-//       `You win by (Player Score: ${playerScore} vs Computer Score ${computerScore}) 🎉`
-//     );
-//   } else {
-//     console.log(
-//       `You lose by (Computer Score ${computerScore} vs Player Score: ${playerScore}) 😡`
-//     );
-//   }
-// }
-
-// game();
+playRound();

@@ -12,7 +12,7 @@ function playRound() {
   btnContainer.addEventListener("click", (e) => {
     if (e.target.tagName === "IMG") {
       playerSelection = e.target.id;
-      imgElement.src = `./img/${e.target.id}.svg`;
+      imgElement.src = `./images/${e.target.id}.svg`;
       // console.log(imgElement);
       yourChoice.appendChild(imgElement);
       // yourChoice.textContent = playerSelection;
@@ -33,7 +33,7 @@ let computerSelection = getComputerChoice();
 function getResult() {
   computerSelection = getComputerChoice();
   // computerChoice.textContent = computerSelection;
-  imgElement1.src = `./img/${computerSelection}.svg`;
+  imgElement1.src = `./images/${computerSelection}.svg`;
   computerChoice.appendChild(imgElement1);
   if (computerSelection === playerSelection) {
     winner = "It's ties";

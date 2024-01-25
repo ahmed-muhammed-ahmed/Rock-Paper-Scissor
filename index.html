@@ -6,61 +6,43 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,500;1,600&family=Poppins:wght@900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Rock Paper Scissor</title>
+    <title>RPS</title>
   </head>
   <body>
     <div class="container">
-      <div class="game-container">
-        <h1 class="heading">Rock Paper Scissor Game</h1>
-        <div class="game-section">
-          <div class="display-img">
-            <div class="player-choice">
-              <p class="score">You</p>
-              <img id="rock" src="./images/rock.svg" alt="Rock" />
-              <img id="paper" src="./images/paper.svg" alt="Paper" />
-              <img id="scissor" src="./images/scissors.svg" alt="scissors" />
-            </div>
-            <div class="computer-choice">
-              <p class="score">Computer</p>
-              <img id="computer-rock" src="./images/rock.svg" alt="Rock" />
-              <img id="computer-paper" src="./images/paper.svg" alt="Paper" />
-              <img
-                id="computer-scissor"
-                src="./images/scissors.svg"
-                alt="scissors"
-              />
-            </div>
-          </div>
-          <div class="result">Let's Play</div>
-          <button class="btn btn-replay text">🔄 Replay</button>
-          <div class="images">
-            <div>
-              <button class="rock">
-                <img src="./images/rock.svg" alt="Rock" />
-              </button>
-              <p class="text">Rock</p>
-            </div>
-            <div>
-              <button class="paper">
-                <img src="./images/paper.svg" alt="Paper" />
-              </button>
-              <p class="text text-paper">Paper</p>
-            </div>
-            <div>
-              <button class="scissor">
-                <img src="./images/scissors.svg" alt="scissors" />
-              </button>
-              <p class="text">scissors</p>
-            </div>
-          </div>
+      <h1>Rock Paper Scissors</h1>
+      <div class="display">
+        <div class="user">
+          <h3>You</h3>
+          <div id="your-choice"></div>
+        </div>
+        <div class="computer">
+          <h3>Computer</h3>
+          <div id="computer-choice"></div>
+        </div>
+      </div>
+      <h3 id="result">Let's Play</h3>
+      <div class="btn-container">
+        <div class="btn">
+          <button><img id="rock" src="./img/rock.svg" alt="rock" /></button>
+          <p class="btn-text">rock</p>
+        </div>
+        <div class="btn">
+          <button><img id="paper" src="./img/paper.svg" alt="paper" /></button>
+          <div class="btn-text">paper</div>
+        </div>
+        <div class="btn">
+          <button>
+            <img id="scissors" src="./img/scissors.svg" alt="scissors" />
+          </button>
+          <p class="btn-text">scissors</p>
         </div>
       </div>
     </div>
-
     <script src="script.js"></script>
   </body>
 </html>
